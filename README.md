@@ -12,4 +12,5 @@
 - **exam_main.py** : html을 다루는 거 router하고 그러는 거 ([users.py](http://users.py/) routes / main.py참조) → 노주
 - **exam_connection.py** 몽고디비 연결해서 documents에 저장하는 거 ([connection.py](http://connection.py/) 참조) → 하늘
 - **mongo_standard.py** : model 폴더에 .py : 몽고디비 연결하는 거 → 하늘
-- **.env** : 주소 → 하늘d
+- **.env** : 주소 → 하늘
+- **exam_users.py** : 상속을 위한 클래스 제작 -> 하늘
