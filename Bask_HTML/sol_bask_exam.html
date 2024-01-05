@@ -1,20 +1,18 @@
 {% extends "nav_template.html"%}
 {% block main_container %}
-<!-- 이름과 비번 입력 폼 -->
+<title>문제풀기</title>
 
-<title>문제들</title>
-
-<h2>문항</h2>
+<h2>사용자 이름</h2>
 <form action="">
     <div class="mb-3 mt-3">
-        <h3>문항</h3>
+        <h3>메롱</h3>
         <!-- 지금 몽고디비에 있는게 없어서 구체화가 안댐 다른 거 부터 해보겠음.... -->
     </div>
 
 
 
 
-    <button type="submit" class="btn btn-primary" formaction="/exam" formmethod="post">Let's Solve the Problem!</button>
+    <button type="submit" class="btn btn-primary" formaction="/result" formmethod="post">Let's Solve the Problem!</button>
 
 </form>
 {% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bask_player_list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .name{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .lists{
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="container">
+        <ul class="nav justify-content-between">
+            <li>
+                <h1 class="text-warning name">천하 제일 농구 퀴즈 대회</h1>
+            </li>
+            <li>
+                <ul class="nav justify-content-end name">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary lists" href="/">Exam list</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link lists" href="/exam">Solive exam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link lists" href="/result">Player list</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main class="container">
+        {% block main_container %}
+        {% endblock %}
+    </main>
+    <footer class="container">
+        {% block footer_container %}
+        {% endblock %}
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
