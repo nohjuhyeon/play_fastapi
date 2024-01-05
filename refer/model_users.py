@@ -18,4 +18,3 @@ class User(Document): # 상속을 위한 것
   
   # beanie는 mongoDB를 비동기적으로 다루기 위한 라이브러리
         
-\
