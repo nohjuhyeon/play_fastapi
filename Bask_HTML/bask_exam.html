@@ -7,13 +7,23 @@
 <h2>문항</h2>
 <form action="">
     <div class="mb-3 mt-3">
-        <h3>문항</h3>
+        {% for question in question_list%}
+        <div>
+            <h3>{{loop.index}}.{{ question.question }}  <span>점수 : {{question.points}} </span></h3>
+        </div>
+        <div>1.{{question.options1}}</div>
+        <div>2.{{question.options2}}</div>
+        <div>3.{{question.options3}}</div>
+        <div>4.{{question.options4}}</div>
+        </div>
+        <hr>
+        {%endfor%}
         <!-- 지금 몽고디비에 있는게 없어서 구체화가 안댐 다른 거 부터 해보겠음.... -->
     </div>
 
 
 
-
+<!-- 여기에 이름과 비번 입력 폼 추가하면 좋을듯? -->
     <button type="submit" class="btn btn-primary" formaction="/exam" formmethod="post">Let's Solve the Problem!</button>
 
 </form>
