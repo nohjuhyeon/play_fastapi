@@ -12,7 +12,7 @@ class Settings(BaseSettings):                                                   
     async def initialize_database(self):                                            # 데이터베이스를 초기화하는 작업을 수행하는 함수 정의
         client = AsyncIOMotorClient(self.DATABASE_URL)                              # AsyncIOMotorClient(self.DATABASE_URL): 비동기적으로 mongoDB 데이터베이스에 연결하고 상호작용할 수 있도록 도와줌
         await init_beanie(database=client.get_default_database(),                   # init_beanie(): 데이터베이스의 초기화 작업을 수행 # client.default_database() : 기본 데이터베이스에 연결 # documents_models=[] : 해당하는 문서 모델 초기화
-                          document_models=[Question]) #model에 있는 user
+                          document_models=[Question]) #model에 있는 Question
         # 요기에 collection들을 넣으면 됨 어떤 collection을 관리할 것인지
         
     class Config:
