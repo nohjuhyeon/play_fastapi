@@ -1,0 +1,47 @@
+[
+    {
+        "question": "농구 경기에서 한 팀이 공을 가지고 있을 때, 상대 팀으로부터 공을 뺏어오는 것을 무엇이라고 하나요?",
+        "options1": "슈팅",
+        "options2": "덩크",
+        "options3": "리바운드",
+        "options4": "턴오버",
+        "answer": "4",
+        "points": 1
+    },
+    {
+        "question": "농구에서 코트의 어떤 영역에서 세 점슛을 시도할 수 있나요?",
+        "options1": "프리스로우 라인",
+        "options2": "센터 서클",
+        "options3": "코너",
+        "options4": "쓰리 포인트 라인",
+        "answer": "4",
+        "points": 1
+    },
+    {
+        "question": "농구 경기에서 공을 다루는 선수가 다른 선수에게 공을 전달할 때 사용하는 주요 기술은?",
+        "options1": "드리블",
+        "options2": "패스",
+        "options3": "슈팅",
+        "options4": "블록",
+        "answer": "2",
+        "points": 1
+    },
+    {
+        "question": "농구에서 공을 네트에 넣는 행위를 무엇이라고 하나요?",
+        "options1": "공스루",
+        "options2": "득점",
+        "options3": "리바운드",
+        "options4": "덩크",
+        "answer": "2",
+        "points": 1
+    },
+    {
+        "question": "농구에서 선수들이 경기 중 공을 가지고 있을 때 공을 골대에 못 넣고 공을 다시 플레이해야 할 때 발생하는 것은 무엇인가요?",
+        "options1": "타임 아웃",
+        "options2": "플래그랜트 파울",
+        "options3": "오버타임",
+        "options4": "턴오버",
+        "answer": "4",
+        "points": 1
+    }
+]
