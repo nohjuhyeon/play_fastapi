@@ -17,7 +17,7 @@ class Question(Document) : # collection에 들어갈 항목 저장. 문제 리�
 
 class Player(Document) : # 플레이어와 점수 분포 리스트
     
-    #######뭐가 필요할지 잘 모르겠음 ######
+    #######뭐가 필요할지 잘 모르겠음 ###### 노주노주
 
     class Settings :
         name = "Player_result"

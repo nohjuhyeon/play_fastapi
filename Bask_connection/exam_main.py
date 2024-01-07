@@ -13,7 +13,7 @@ from fastapi.templating import Jinja2Templates
 
 
 # html 들이 있는 폴더 위치
-templates = Jinja2Templates(directory="Back_connection/")
+templates = Jinja2Templates(directory="Bask_connection/")
 
 from fastapi.middleware.cors import CORSMiddleware
 # No 'Access-Control-Allow-Origin'
