@@ -64,14 +64,8 @@ async def root(request:Request):
     
 @app.get("/result")
 async def root(request:Request):
-    result_list = await collection_result.get_all()
-    return templates.TemplateResponse("bask_player_list.html"
-                                      ,context={'request':request
-                                                , 'player_result' : result_list})
+    return templates.TemplateResponse("bask_player_list.html",{'request':request})
 
 @app.post("/result")                                                                # bask_player_list로 이동 시
 async def root(request:Request):
-    result_list = await collection_result.get_all()
-    return templates.TemplateResponse("bask_player_list.html"
-                                      ,context={'request':request
-                                                , 'player_result' : result_list})
+    return templates.TemplateResponse("bask_player_list.html",{'request':request})

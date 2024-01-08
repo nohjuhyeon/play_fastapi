@@ -21,24 +21,15 @@
                 <td>
                     <h4>answer</h4>
                 </td>
+                {% for question in question_list%}
                 <td>
-                    <h4>{{question.options1}}</h4>
+                    <h4>{{question.answer}}</h4>
                 </td>
-                <td>
-                    <h4>2</h4>
-                </td>
-                <td>
-                    <h4>2</h4>
-                </td>
-                <td>
-                    <h4>2</h4>
-                </td>
-                <td>
-                    <h4>2</h4>
-                </td>
+                {%endfor%}
             </tr>
         </tbody>
     </table>
+    <hr>
     <h2>선수별 문제 풀이</h2>
 
     <table class="table table-hover">
