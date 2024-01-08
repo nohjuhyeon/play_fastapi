@@ -23,7 +23,6 @@ class Player(Document) : # 플레이어와 점수 분포 리스트
     answer3 : Optional[str] =None
     answer4 : Optional[str] =None
     player_score : Optional[int] =None
-    #######뭐가 필요할지 잘 모르겠음 ######
 
     class Settings :
         name = "Player_result"
