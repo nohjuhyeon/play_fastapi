@@ -50,16 +50,10 @@ async def root(request:Request):
 @app.post("/exam")                                                                  # solv_bask_exam으로 이동 시 
 async def root(request:Request):
     question_list = await collection_quest.get_all()
-    player_dict = dict(await request.form())
-    # 저장하기
-    player = Player(**player_dict)
-    await collection_result.save(player)
-    # 리스트 정보
-    player_list = collection_result.get_all()
+
     return templates.TemplateResponse(name="sol_bask_exam.html"
                                       , context={'request':request
-                                                 , 'question_list' :question_list
-                                                 , 'player_list' : player_list})   
+                                                 , 'question_list' :question_list})   
 # @app.get("/result")
 # async def root(request:Request):
 #     question_list = await collection_quest.get_all()
@@ -87,8 +81,31 @@ async def root(request:Request):
 @app.post("/result")                                                                # bask_player_list로 이동 시
 async def root(request:Request):
     question_list = await collection_quest.get_all()
+    # question_list_dict = dict(await collection_quest.get_all())
+    player_dict = dict(await request.form())
+    # 합산
+    answer_list = [question.answer for question in question_list]
+    points_list = [question.points for question in question_list]
+    sum_score = 0
+    for i in range(len(answer_list)):
+        if answer_list[i] == player_dict['answer{}'.format(i+1)]:
+            sum_score += points_list[i]
+        else : 
+            pass
+    # 저장하기
+    player_dict["score"] = sum_score
+    player = Player(**player_dict)  
+    await collection_result.save(player)
+    # 리스트 정보
     player_list = await collection_result.get_all()
-    return templates.TemplateResponse(name="bask_player_list_jinja.html"
+    # 이스터 에그
+    user_name_for_easter = player_dict['player_name']
+    if user_name_for_easter == 'yojulab' :
+        link = "bask_player_list.html"
+    else:
+        link = "bask_player_list_jinja.html"
+    pass
+    return templates.TemplateResponse(name=link
                                       , context={'request':request
                                                  , 'question_list' :question_list
                                                  , "player_list": player_list})   
