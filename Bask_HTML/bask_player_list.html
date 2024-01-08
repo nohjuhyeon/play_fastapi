@@ -3,33 +3,9 @@
 <!-- 검색 항목 추가 필요 -->
 <!-- 이스터애그 항목 -->
 <form action="">
-    <div>
-        <h3>각 문항 정답</h3>
+    <div class="justify-content-center">
+        <h3>✨🎇축하합니다! 당신은 🥚이스터에그🥚를 발견하셨습니다🎉🎊</h3>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Question number</th>
-                <th>First question</th>
-                <th>Second question</th>
-                <th>Third question</th>
-                <th>Fourth question</th>
-                <th>Fifth question</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <h4>answer</h4>
-                </td>
-                {% for question in question_list%}
-                <td>
-                    <h4>{{question.answer}}</h4>
-                </td>
-                {%endfor%}
-            </tr>
-        </tbody>
-    </table>
     <hr>
     <h2>선수별 문제 풀이</h2>
 

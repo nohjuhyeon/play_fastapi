@@ -4,12 +4,12 @@
 
 <title>문제들</title>
 
-<h2>문항</h2>
+<h3>문항</h3>
 <form action="">
     <div class="mb-3 mt-3">
         {% for question in question_list%}
         <div>
-            <h3>{{loop.index}}.{{ question.question }}  <span>점수 : {{question.points}} </span></h3>
+            <h5><{{loop.index}}> {{question.question}} <span> (점수 : {{question.points}})</span> </h5>
         </div>
         <div>1.{{question.options1}}</div>
         <div>2.{{question.options2}}</div>

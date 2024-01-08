@@ -13,7 +13,7 @@
     <div class="mb-3 mt-3">
         {% for question in question_list %}
         <div>
-            <h5>{{loop.index}}.{{question.question}} <span> (점수 : {{question.points}})</span> </h5>
+            <h5><{{loop.index}}> {{question.question}} <span> (점수 : {{question.points}})</span> </h5>
         </div>
         <div>1. {{question.options1}}</div>
         <div>2. {{question.options2}}</div>

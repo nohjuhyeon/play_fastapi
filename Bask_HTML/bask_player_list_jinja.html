@@ -41,20 +41,21 @@
                 <th>Third question</th>
                 <th>Fourth question</th>
                 <th>Fifth question</th>
-                <th>Total Scroe</th>
+                <th>Total Score</th>
             </tr>
         </thead>
         <tbody>
+            {% for player in player_list%}
             <tr>
-                {% for player in plyaer_list%}
-                <td>{{ player.plyaer_name }}</td>
+                <td>{{ player.player_name }}</td>
                 <td>{{player.answer1}}</td>
                 <td>{{player.answer2}}</td>
                 <td>{{player.answer3}}</td>
                 <td>{{player.answer4}}</td>
-                <td>100</td>
-                {% endfor %}
+                <td>{{player.answer5}}</td>
+                <td>{{player.score}}</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
     <table>
