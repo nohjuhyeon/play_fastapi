@@ -3,10 +3,11 @@
 <!-- 문제 푸는 칸 -->
 <title>문제풀기</title>
 
-<h2>문제지</h2>
+<h2>🏀문제지🏀</h2>
 <form action="">
     <div class="mb-3 mt-3">
-        <h4>응시자<input type="text" name="player_name"></h4>
+        <h4>응시자 : <input type="text" name="player_name"></h4>
+        <hr>
     </div>
     <div class="mb-3 mt-3">
         {% for question in question_list %}
@@ -18,6 +19,7 @@
         <div>3. {{question.options3}}</div>
         <div>4. {{question.options4}}</div>
         <div>답 : <input type="text" name="answer{{loop.index}}"></div>
+        <hr>
         {% endfor %}
     </div>
 
