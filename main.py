@@ -54,22 +54,6 @@ async def root(request:Request):
     return templates.TemplateResponse(name="sol_bask_exam.html"
                                       , context={'request':request
                                                  , 'question_list' :question_list})   
-# @app.get("/result")
-# async def root(request:Request):
-#     question_list = await collection_quest.get_all()
-#     return templates.TemplateResponse(name="bask_player_list.html"
-#                                       , context={'request':request
-#                                                  , 'question_list' :question_list})   
-
-# @app.post("/result")                                                                # bask_player_list로 이동 시
-# async def root(request:Request):
-#     question_list = await collection_quest.get_all()
-#     player_list = await collection_result.get_all()
-#     return templates.TemplateResponse(name="bask_player_list.html"
-#                                       , context={'request':request
-#                                                  , 'question_list' :question_list
-#                                                  , "player_list": player_list})   
-
 @app.get("/result")
 async def root(request:Request):
     question_list = await collection_quest.get_all()
@@ -81,7 +65,6 @@ async def root(request:Request):
 @app.post("/result")                                                                # bask_player_list로 이동 시
 async def root(request:Request):
     question_list = await collection_quest.get_all()
-    # question_list_dict = dict(await collection_quest.get_all())
     player_dict = dict(await request.form())
     # 합산
     answer_list = [question.answer for question in question_list]
