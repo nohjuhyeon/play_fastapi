@@ -17,7 +17,7 @@ class Question(Document) :                          # collection에 들어갈 �
 
 class Player(Document) : # 플레이어와 점수 분포 리스트
 
-    plyaer_name : Optional[str] =None
+    player_name : Optional[str] =None
     answer1 : Optional[str] =None
     answer2 : Optional[str] =None
     answer3 : Optional[str] =None
