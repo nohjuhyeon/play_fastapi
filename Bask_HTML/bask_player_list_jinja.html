@@ -1,0 +1,65 @@
+{% extends "nav_template.html"%}
+{% block main_container %}
+<!-- 검색 항목 추가 필요 -->
+<form action="">
+    <div>
+        <h3>각 문항 정답</h3>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Question number</th>
+                <th>First question</th>
+                <th>Second question</th>
+                <th>Third question</th>
+                <th>Fourth question</th>
+                <th>Fifth question</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <h4>answer</h4>
+                </td>
+                {% for question in question_list%}
+                <td>
+                    <h4>{{question.answer}}</h4>
+                </td>
+                {%endfor%}
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2>선수별 문제 풀이</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>player name</th>
+                <th>First question</th>
+                <th>Second question</th>
+                <th>Third question</th>
+                <th>Fourth question</th>
+                <th>Fifth question</th>
+                <th>Total Scroe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for player in plyaer_list%}
+                <td>{{ player.plyaer_name }}</td>
+                <td>{{player.answer1}}</td>
+                <td>{{player.answer2}}</td>
+                <td>{{player.answer3}}</td>
+                <td>{{player.answer4}}</td>
+                <td>100</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead></thead>
+    </table>
+</form>
+</main>
+{% endblock %}
