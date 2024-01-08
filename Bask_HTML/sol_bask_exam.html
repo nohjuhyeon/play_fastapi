@@ -3,10 +3,11 @@
 <!-- 문제 푸는 칸 -->
 <title>문제풀기</title>
 
-<h2>🏀문제지🏀</h2>
+
 <form action="">
-    <div class="mb-3 mt-3">
-        <h4>응시자 : <input type="text" name="player_name"></h4>
+    <div class="mb-3 mt-3 row justify-content-around">
+        <h2 class="col-6">🏀문제지🏀</h2>
+        <h4 class="col-6">응시자 : <input type="text" name="player_name"></h4>
         <hr>
     </div>
     <div class="mb-3 mt-3">
@@ -22,6 +23,7 @@
         <hr>
         {% endfor %}
     </div>
+    <!-- 여기서 얻을 수 있는 값 : 응시자 이름 / 4개의 답변 -->
 
     <button type="submit" class="btn btn-primary" formaction="/result" formmethod="post">Result</button>
 
