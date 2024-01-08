@@ -26,9 +26,11 @@ app.add_middleware(
 
 from Bask_connection.exam_connection import Database                        # Database 연결
 
-from Bask_connection.exam_users import Question # 컬랙션을 연결하고, 컬렉션에 저장/불러오기 하는 방법 
+from Bask_connection.exam_users import Question # 컬랙션을 연결하고, 컬렉션에 저장/불러오기 하는 방법
+from Bask_connection.exam_users import Player
 
-collection_quest = Database(Question)                                      # Question_list에 연결
+collection_quest = Database(Question)                                    # Question_list에 연결
+collection_result = Database(Player)
 @app.get("/")
 async def root(request:Request):                                                    # bask_exam으로 이동 시 
     # return templates.TemplateResponse("bask_exam.html",{'request':Request})
@@ -40,22 +42,21 @@ async def root(request:Request):                                                
 
 @app.get("/exam")
 async def root(request:Request):
-    return templates.TemplateResponse("sol_bask_exam.html",{'request':request})
+    question_list = await collection_quest.get_all()
+    return templates.TemplateResponse(name="sol_bask_exam.html"
+                                      , context={'request':request
+                                                 , 'question_list' :question_list})   
 
 @app.post("/exam")                                                                  # solv_bask_exam으로 이동 시 
 async def root(request:Request):
-    return templates.TemplateResponse("sol_bask_exam.html",{'request':request})
-
+    question_list = await collection_quest.get_all()
+    return templates.TemplateResponse(name="sol_bask_exam.html"
+                                      , context={'request':request
+                                                 , 'question_list' :question_list})   
 @app.get("/result")
 async def root(request:Request):
-    question_list = await collection_quest.get_all()
-
-    return templates.TemplateResponse("bask_player_list.html",{'request':request
-                                      , 'question_list' :question_list})
+    return templates.TemplateResponse("bask_player_list.html",{'request':request})
 
 @app.post("/result")                                                                # bask_player_list로 이동 시
 async def root(request:Request):
-    question_list = await collection_quest.get_all()
-
-    return templates.TemplateResponse("bask_player_list.html",{'request':request
-                                      , 'question_list' :question_list})
+    return templates.TemplateResponse("bask_player_list.html",{'request':request})

@@ -3,17 +3,27 @@
 <!-- 문제 푸는 칸 -->
 <title>문제풀기</title>
 
-<h2>사용자 이름</h2>
+<h2>🏀문제지🏀</h2>
 <form action="">
     <div class="mb-3 mt-3">
-        <h3>메롱</h3>
-        <!-- 지금 몽고디비에 있는게 없어서 구체화가 안댐 다른 거 부터 해보겠음.... -->
+        <h4>응시자 : <input type="text" name="player_name"></h4>
+        <hr>
+    </div>
+    <div class="mb-3 mt-3">
+        {% for question in question_list %}
+        <div>
+            <h4>{{loop.index}}.{{question.question}} <span> (점수 : {{question.points}})</span> </h4>
+        </div>
+        <div>1. {{question.options1}}</div>
+        <div>2. {{question.options2}}</div>
+        <div>3. {{question.options3}}</div>
+        <div>4. {{question.options4}}</div>
+        <div>답 : <input type="text" name="answer{{loop.index}}"></div>
+        <hr>
+        {% endfor %}
     </div>
 
-
-
-
-    <button type="submit" class="btn btn-primary" formaction="/result" formmethod="post">Let's Solve the Problem!</button>
+    <button type="submit" class="btn btn-primary" formaction="/result" formmethod="post">Result</button>
 
 </form>
 {% endblock %}
