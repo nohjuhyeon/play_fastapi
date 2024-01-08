@@ -44,8 +44,10 @@ async def root(request:Request):
 
 @app.post("/exam")                                                                  # solv_bask_exam으로 이동 시 
 async def root(request:Request):
-    return templates.TemplateResponse("sol_bask_exam.html",{'request':request})
-
+    question_list = await collection_quest.get_all()
+    return templates.TemplateResponse(name="sol_bask_exam.html"
+                                      , context={'request':request
+                                                 , 'question_list' :question_list})   
 @app.get("/result")
 async def root(request:Request):
     return templates.TemplateResponse("bask_player_list.html",{'request':request})
