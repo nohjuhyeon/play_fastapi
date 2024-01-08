@@ -58,7 +58,8 @@ async def root(request:Request):
     player_list = collection_result.get_all()
     return templates.TemplateResponse(name="sol_bask_exam.html"
                                       , context={'request':request
-                                                 , 'question_list' :question_list})   
+                                                 , 'question_list' :question_list
+                                                 , 'player_list' : player_list})   
 # @app.get("/result")
 # async def root(request:Request):
 #     question_list = await collection_quest.get_all()
