@@ -50,6 +50,12 @@ async def root(request:Request):
 @app.post("/exam")                                                                  # solv_bask_exam으로 이동 시 
 async def root(request:Request):
     question_list = await collection_quest.get_all()
+    player_dict = dict(await request.form())
+    # 저장하기
+    player = Player(**player_dict)
+    await collection_result.save(player)
+    # 리스트 정보
+    player_list = collection_result.get_all()
     return templates.TemplateResponse(name="sol_bask_exam.html"
                                       , context={'request':request
                                                  , 'question_list' :question_list})   
